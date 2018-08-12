@@ -1,13 +1,13 @@
 {
-  "name": "mock-server",
+  "name": "chico",
   "version": "1.0.0",
-  "description": "A simple HTTP mock server ",
-  "main": "app.js",
+  "description": "A simple mock server for Groucho and Harpo",
+  "main": "chico.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mike Kelly",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "dependencies": {
     "express": "^4.16.3"
   }

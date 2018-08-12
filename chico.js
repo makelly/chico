@@ -1,12 +1,11 @@
 // Mock web server
 
 const express = require('express');
-
 const port = 80;
 
 var server = express();
 
-
+// Listen for publications sent to HealthShare EMS
 server.put('/Bundle/*', (req, res) => {
   console.log('***** HealthShare Publication *****')
   console.log(req.headers);
