@@ -33,7 +33,7 @@ The following configuration items can be set:
 
 | Item | Description | Data type | Default |
 |------|-------------|-----------|---------|
-| `port` | The port number on which Chico will listen for incoming HTTP requests. | Number | `80` |
+| `port` | The port number on which Chico will listen for incoming HTTP requests. | number | `80` |
 | `healthshare.showMethod` | Show HTTP request method. | boolean | `true` |
 | `healthshare.showURL` | Show HTTP request URL. | boolean | `true` |
 | `healthshare.showHeaders` | Show HTTP request headers. | boolean | `true` |
