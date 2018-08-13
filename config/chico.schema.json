@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Chico config schema",
+  "description": "A JSON schema for Chico config file",
+  "type": "object",
+
+  "properties": {
+
+    "healthshare": {
+      "description": "HealthShare EMS configuration items",
+      "type": "object",
+
+      "properties": {
+
+        "showMethod": {
+          "description": "Show received HTTP method",
+          "type": "boolean",
+          "default": false
+        },
+
+        "showURL": {
+          "description": "Show received HTTP URL",
+          "type": "boolean",
+          "default": false
+        },
+
+        "showHeaders": {
+          "description": "Show received HTTP headers",
+          "type": "boolean",
+          "default": false
+        },
+
+        "showBody": {
+          "description": "Show received HTTP body",
+          "type": "boolean",
+          "default": false
+        },
+
+        "required": ["showMethod", "showURL", "showHeaders", "showBody"]
+      }
+    },
+
+    "mesh": {
+      "description": "MESH configuration items",
+      "type": "object",
+
+      "properties": {
+
+      }
+    },
+
+    "nrls": {
+      "description": "NRLS configuration items",
+      "type": "object",
+
+      "properties": {
+
+      }
+    },
+
+    "required": ["healthshare", "mesh", "nrls"]
+  }
+}

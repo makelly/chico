@@ -1,0 +1,15 @@
+{
+  "port": 3000,
+  "healthshare": {
+    "showMethod": true,
+    "showURL": true,
+    "showHeaders": true,
+    "showBody": false
+  },
+  "mesh": {
+
+  },
+  "nrls": {
+
+  }
+}
