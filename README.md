@@ -34,7 +34,26 @@ The following configuration items can be set:
 | Item | Description | Data type | Default |
 |------|-------------|-----------|---------|
 | `port` | The port number on which Chico will listen for incoming HTTP requests. | Number | `80` |
-| 'healthshare.showMethod' | Show HTTP request method. | boolean | `true` |
+| `healthshare.showMethod` | Show HTTP request method. | boolean | `true` |
 | `healthshare.showURL` | Show HTTP request URL. | boolean | `true` |
 | `healthshare.showHeaders` | Show HTTP request headers. | boolean | `true` |
-|  `healthshare.showBody` | Show HTTP body. | boolean | `true` | 
+|  `healthshare.showBody` | Show HTTP body. | boolean | `true` |
+
+Example configuration `chico.json` file:
+```
+{
+  "port": 3000,
+  "healthshare": {
+    "showMethod": true,
+    "showURL": true,
+    "showHeaders": true,
+    "showBody": false
+  },
+  "mesh": {
+
+  },
+  "nrls": {
+
+  }
+}
+```
