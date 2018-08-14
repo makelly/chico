@@ -4,6 +4,8 @@ Chico is a mock server to:
 * Receive event publications as MESH
 * Receive pointers as NRLS
 
+*"Who are you going to believe, me or your own eyes?"* Chico Marx
+
 ## Installation
 This is a Node application, therefore you need to first install [Node](https://nodejs.org/en/) on your computer.
 
