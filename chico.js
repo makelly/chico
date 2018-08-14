@@ -19,7 +19,7 @@ const config = loadConfig();
 // Listen for publications sent to HealthShare EMS
 server.put('/ems/fhir/Bundle/*', (req, res) => {
   console.log(' ');
-  console.log('** HealthShare Publication Received **'.yellow.inverse);
+  console.log('** HealthShare Received Event **'.yellow.inverse);
   if (config.healthshare.showMethod) {
     console.log('HTTP Method:'.yellow);
     console.log(req.method);
@@ -46,7 +46,7 @@ server.put('/ems/fhir/Bundle/*', (req, res) => {
 // Listen for publications sent to MESH
 server.post('/messageexchange/*', (req, res) => {
   console.log(' ');
-  console.log('** MESH Publication Received **'.yellow.inverse);
+  console.log('** MESH Received Event **'.yellow.inverse);
   if (config.mesh.showMethod) {
     console.log('HTTP Method:'.yellow);
     console.log(req.method);

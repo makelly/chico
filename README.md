@@ -68,7 +68,7 @@ Example configuration `chico.json` file:
 ### InterSystems HealthShare EMS
 Chico will receive a published event and display the following message to the console:
 
-`** HealthShare Publication Received **`
+`** HealthShare Received Event **`
 
 Dependant on the configuration settings, details of the received HTTP request will then be shown.
 
@@ -77,7 +77,7 @@ Chico will assume all events it receives are valid and return a status code of `
 ### MESH
 Chico will receive a published event and display the following message to the console:
 
-`** MESH Publication Received **`
+`** MESH Received Event **`
 
 Dependant on the configuration settings, details of the received HTTP request will then be shown.
 
