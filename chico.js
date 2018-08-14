@@ -36,8 +36,35 @@ server.put('/ems/fhir/Bundle/*', (req, res) => {
     console.log('HTTP Body:'.yellow);
     console.log(req.body);
   }
-  res.send('Thank you');
+  let vid = '123456789';
+  res.setHeader('content-location', req.protocol + '://' + req.hostname + req.originalUrl + '/_history/' + vid);
+  res.setHeader('Etag', 'W/"' + vid + '"');
+  res.send('Response from Chico');
   res.status(200).end();
+});
+
+// Listen for publications sent to MESH
+server.post('/messageexchange/*', (req, res) => {
+  console.log(' ');
+  console.log('** MESH Publication Received **'.yellow.inverse);
+  if (config.mesh.showMethod) {
+    console.log('HTTP Method:'.yellow);
+    console.log(req.method);
+  }
+  if (config.mesh.showURL) {
+    console.log('HTTP URL:'.yellow);
+    console.log(req.protocol + '://' + req.hostname + req.originalUrl);
+  }
+  if (config.mesh.showHeaders) {
+    console.log('HTTP Headers:'.yellow);
+    console.log(req.headers);
+  }
+  if (config.mesh.showBody) {
+    console.log('HTTP Body:'.yellow);
+    console.log(req.body);
+  }
+  res.status(202);
+  res.send('{"messageID" : 1234567890}').end();
 });
 
 server.listen(config.port, () => {
@@ -48,8 +75,10 @@ server.listen(config.port, () => {
 function loadConfig()
 {
   // Set config to default values
-  let config = { port: 80, healthshare: { showMethod: true, showURL: true, showHeaders: true, showBody: true},
-                mesh: { },
+  let config = {
+                port: 80,
+                healthshare: { showMethod: true, showURL: true, showHeaders: true, showBody: true },
+                mesh: { showMethod: true, showURL: true, showHeaders: true, showBody: true },
                 nrls: {}
               };
 
