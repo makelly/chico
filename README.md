@@ -38,6 +38,10 @@ The following configuration items can be set:
 | `healthshare.showURL` | Show HTTP request URL. | boolean | `true` |
 | `healthshare.showHeaders` | Show HTTP request headers. | boolean | `true` |
 |  `healthshare.showBody` | Show HTTP body. | boolean | `true` |
+| `mesh.showMethod` | Show HTTP request method. | boolean | `true` |
+| `mesh.showURL` | Show HTTP request URL. | boolean | `true` |
+| `mesh.showHeaders` | Show HTTP request headers. | boolean | `true` |
+|  `mesh.showBody` | Show HTTP body. | boolean | `true` |
 
 Example configuration `chico.json` file:
 ```
@@ -50,10 +54,31 @@ Example configuration `chico.json` file:
     "showBody": false
   },
   "mesh": {
-
+    "showMethod": true,
+    "showURL": true,
+    "showHeaders": true,
+    "showBody": false
   },
   "nrls": {
 
   }
 }
 ```
+## Behaviours
+### InterSystems HealthShare EMS
+Chico will receive a published event and display the following message to the console:
+
+`** HealthShare Publication Received **`
+
+Dependant on the configuration settings, details of the received HTTP request will then be shown.
+
+Chico will assume all events it receives are valid and return a status code of `200` and set the `content-location` and `etag` headers to the same fixed values.
+
+### MESH
+Chico will receive a published event and display the following message to the console:
+
+`** MESH Publication Received **`
+
+Dependant on the configuration settings, details of the received HTTP request will then be shown.
+
+Chico will assume all events it receives are valid and return a status code of `202` and set the response `body` to the same fixed values.
